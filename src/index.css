@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Maple";
+  src: url(../public/fonts/SOYO\ Maple\ Regular.ttf) format("truetype");
+}
+
+body {
+  font-family: "Maple", sans-serif; /* "Maple" 폰트를 기본 sans-serif 폰트로 대체합니다. */
+}
