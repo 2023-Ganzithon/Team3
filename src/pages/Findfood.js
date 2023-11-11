@@ -1,11 +1,19 @@
 import styled from 'styled-components';
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
-const FindFood = () => {
-  const [selectedProvince, setSelectedProvince] = useState('경기도'); // 기본값은 서울특별시로 설정
-  const [selectedCity, setSelectedCity] = useState('전체'); // 기본값은 전체로 설정
+const FindFood = ({ onSelect }) => {
+    const navigate = useNavigate();
+
+    const [selectedProvince, setSelectedProvince] = useState('경기도'); // 기본값은 서울특별시로 설정
+    const [selectedCity, setSelectedCity] = useState('전체'); // 기본값은 전체로 설정
+    const [buttonStates, setButtonStates] = useState({});
+    const [buttonPressed, setButtonPressed] = useState(false);
+    const [provinceButtonPressed, setProvinceButtonPressed] = useState(false);
+    const [cityButtonPressed, setCityButtonPressed] = useState(false);
+
 
   const provinces = ['경기도', '강원도', '충청북도', '충청남도', '전라북도', '전라남도', '경상북도', '경상남도', '제주도']; // 기타 도는 필요에 따라 추가
   const cityMap = {
@@ -20,8 +28,33 @@ const FindFood = () => {
     '제주도': ['전체', '서귀포시', '제주시'],
     }
 
-  const handleCityChange = (city) => {
-    setSelectedCity(city);
+    const handleProvinceButtonClick = (province) => {
+        setSelectedProvince(province);
+        setButtonStates((prevStates) => ({
+            ...resetButtonStates(prevStates),
+            [province]: true,
+          }));
+      };
+
+    const handleCityButtonClick = (city) => {
+        setSelectedCity(city);
+        setButtonStates((prevStates) => ({
+            ...resetButtonStates(prevStates),
+            [city]: true,
+          }));
+      };
+
+      const resetButtonStates = () => {
+        const resetStates = {};
+        for (const key in buttonStates) {
+          resetStates[key] = false;
+        }
+        return resetStates;
+      };
+      
+  const handleButtonClick = () => {
+    // 버튼을 클릭했을 때 이동할 경로와 함께 선택된 값 전달
+    navigate(`/fooddetail?province=${selectedProvince}&city=${selectedCity}`);
   };
 
       return (
@@ -30,19 +63,24 @@ const FindFood = () => {
                 <LogoDiv>
                     <h3>삼시세끼</h3>
                 </LogoDiv>
-      <div>
-        <label>도: </label>
-        {provinces.map((province) => (
-          <button key={province} onClick={() => setSelectedProvince(province)}>{province}</button>
-        ))}
-      </div>
-      <div>
-        <label>시/군/구: </label>
-        {cityMap[selectedProvince].map((city) => (
-          <button key={city} onClick={() => handleCityChange(city)}>{city}</button>
-        ))}
-      </div>
-      <button>음식 찾기</button>
+
+        <Div>
+            <DoDiv>
+
+                {provinces.map((province) => (
+                <button key={province} onClick={() => handleProvinceButtonClick(province)} style={{ backgroundColor: buttonStates[province] ? '#5E9D69' : '#75C382'}}>{province}</button>
+                ))}
+            </DoDiv>
+            <SiDiv>
+
+                {cityMap[selectedProvince].map((city) => (
+                <button key={city} onClick={() => handleCityButtonClick(city)} style={{ backgroundColor: buttonStates[city]  ?  '#9D9D9D' : 'transrant' }}>{city}</button>
+                ))}
+            </SiDiv>
+        </Div>
+        <FindDiv>
+            <button onClick={handleButtonClick}>음식 찾기</button>
+        </FindDiv>
       </MainWrapper>
     </MainContainer>
   );
@@ -73,3 +111,76 @@ const MainWrapper = styled.div`
   align-items: center;
 `;
 
+const Div = styled.div`
+display: flex;
+justify-content: center;
+
+
+`;
+
+const DoDiv = styled.div`
+display: flex;
+flex-direction: column;
+
+button {
+    border: none;
+    border-radius: 10px;
+    color: white;
+    
+    margin: 5px;
+    font-family: Maple;
+
+    width: 70px;
+    height: 30px;
+}
+
+`;
+
+const SiDiv = styled.div`
+display: flex;
+flex-direction: column;
+
+flex-wrap: wrap; /* 줄 바꿈 설정 */
+max-width: 300px; /* 적절한 최대 너비 설정 */
+height: 500px;
+
+button {
+    border: none;
+    border-radius: 10px;
+    background-color: transrant;
+    
+    margin: 5px;
+    font-family: Maple;
+
+    width: 70px;
+    height: 30px;
+}
+
+button:hover {
+    background-color: #9D9D9D;
+}
+
+`;
+
+const FindDiv = styled.div`
+display: flex;
+justify-content: center;
+
+button {
+    border: none;
+    border-radius: 20px;
+    background-color: #75C382;
+    color: white;
+    
+    margin: 5px;
+    font-family: Maple;
+    font-size: 15px;
+
+    width: 100px;
+    height: 40px;
+}
+
+button:hover {
+    background-color: #5E9D69;
+}
+`;

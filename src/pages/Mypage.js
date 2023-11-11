@@ -28,7 +28,7 @@ function Mypage() {
 
     useEffect(() => {
         // 실제 백엔드 API 엔드포인트에 맞게 수정
-        fetch('https://your-backend-api.com/user-info')
+        fetch('https://github.com/da-jeong/Ganzithon_Server')
             .then((response) => response.json())
             .then((data) => setUserInfo(data))
             .catch((error) => console.error('Error fetching user info:', error));
