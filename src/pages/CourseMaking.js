@@ -14,6 +14,7 @@ function CourseMaking() {
     ['', '', '', '']
   ]);
   const [cityOptions, setCityOptions] = useState([]);
+  const [mapImage, setMapImage] = useState(null);
   const mapRef = useRef(null);
   let navigate = useNavigate();
 
@@ -98,6 +99,28 @@ function CourseMaking() {
     setCityOptions(cityOptions);
   }
 
+  const handleImageUpload = () => {
+    const inputElement = document.createElement('input');
+    inputElement.type = 'file';
+    inputElement.accept = 'image/*';
+    inputElement.addEventListener('change', (event) => {
+      const selectedImage = event.target.files[0];
+      setMapImage(URL.createObjectURL(selectedImage));
+    });
+    inputElement.click();
+  };
+
+  useEffect(() => {
+    if(mapImage) {
+      const mapImgElement = document.querySelector('.mapImg');
+      if(mapImgElement) {
+        mapImgElement.style.backgroundImage = `url(${mapImage})`;
+        mapImgElement.style.backgroundSize = 'cover';
+        mapImgElement.style.backgroundPosition = 'center';
+      }
+    }
+  }, [mapImage]);
+
   return (
     <MainContainer>
       <MainWrapper>
@@ -155,7 +178,7 @@ function CourseMaking() {
               </select>
             )}
           </div>
-          <img className="imgAdd" src="images/courseMaking/imgAdd.svg" />
+          <img className="imgAdd" src="images/courseMaking/imgAdd.svg" onClick={handleImageUpload} />
           <img className="courseSave" onClick={() => {navigate('/coursemakingfin');}} src="images/courseMaking/courseSave.svg"/> 
         </div>
       </MainWrapper>
