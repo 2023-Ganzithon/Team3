@@ -1,0 +1,54 @@
+.logoImage, .ticketImage, .mainImage {
+    margin: 30px;
+}
+
+.logoImage {
+    width: 184px;
+    height: 48px;
+}
+
+.ticketImage {
+    width: 256px;
+    height: 434px;
+}
+
+.station {
+    width: 146px;
+    height: 71px;
+    margin-left: 30px;
+    position: fixed;
+    top: -80px;
+    right: -70px;
+}
+
+.departure {
+    width: 100px;
+    height: 23px;
+    position: fixed;
+    top: 35px;
+    right: 13px;
+}
+
+.seat {
+    width: 100px;
+    height: 23px;
+    position: fixed;
+    top: 35px;
+    right: -83px;
+}
+
+.seatNum {
+    width: 210px;
+    height: 23px;
+    position: fixed;
+    top: 86px;
+    right: -107px;
+}
+
+.lastText {
+    width: 158px;
+    height: 44px;
+    position: fixed;
+    top: 145px;
+    right: -83px;
+}
