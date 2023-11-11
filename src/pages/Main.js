@@ -61,15 +61,20 @@ function Main() {
 export default Main;
 
 const MainContainer = styled.div`
-    background-color: #797979;
+  width: 100%;
+  background-color: #797979;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const MainWrapper = styled.div`
   width: 390px;
-  height: auto;
+  height: 844px;
   background-color: white;
-  margin: 0px;
-
+  position: flex;
+  flex-direction: column; 
+  align-items: center;
 `;
 
 const LogoDiv = styled.div`
