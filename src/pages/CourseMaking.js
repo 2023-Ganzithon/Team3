@@ -4,7 +4,6 @@ import "../styles/CourseMaking.css";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
 function CourseMaking() {
   const[courseTitle, setCourseTitle] = useState('');
   const[tableContent, setTableContent] = useState([
@@ -17,27 +16,6 @@ function CourseMaking() {
   const [mapImage, setMapImage] = useState(null);
   const mapRef = useRef(null);
   let navigate = useNavigate();
-
-  useEffect(() => {
-    const loadKakaoMapScript = () => {
-      const script = document.createElement('script');
-      script.src = 'https://dapi.kakao.com/v2/maps/sdk.js?autoload=false&libraries=services';
-      document.head.appendChild(script);
-
-      script.onload = () => {
-        window.kakao.maps.load(() => {
-          const container = mapRef.current;
-          const options = {
-            center: new window.kakao.maps.LatLng(37.5665, 126.9780),
-            level: 3,
-          };
-          const map = new window.kakao.maps.Map(container, options);
-        });
-      };
-      script.setAttribute('data-appkey', '78478d881d1aff495ea7a841e5e76046');
-    };
-    loadKakaoMapScript(); 
-  }, []);
 
   const handleCellClick = (row, col) => {
     const currentValue = tableContent[row][col];

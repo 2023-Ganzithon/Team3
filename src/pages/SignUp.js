@@ -4,7 +4,6 @@ import "../styles/SignUp.css"
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
 function SignUp() {
   const [signUpId, setSignUpId] = useState('');
   const [signUpPw, setSignUpPw] = useState('');
@@ -19,7 +18,7 @@ function SignUp() {
         return;
       }
     
-      const response = await axios.post('', {
+      const response = await axios.post('http://127.0.0.1:8000/signup', {
         username: signUpId,
         password: signUpPw,
         repassword: pwConfirm,

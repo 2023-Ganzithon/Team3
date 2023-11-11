@@ -1,48 +1,69 @@
-.LogoAndOptions {
+.totalBox {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-  }
-  
-.idPwChoiceLogo {
-    width: 150px;
-    height: 72px;
-    margin-top: -500px;
-    margin-left: -10px;
+    height: 100vh;
 }
 
-.totalFindPart {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    margin-left: -150px;
-}
-  
-.pwFindPart {
-    margin-left: 25px;
+.logoHigh {
+    width: 178px;
+    height: 109px;
+    margin: 0 auto; 
+    margin-top: 121px;
+    margin-bottom: 98px;
 }
 
-.idFindPart,
-.pwFindPart {
-    width: 158px;
-    height: 189px;
+.loginContainer {
     border: 1px solid #ccc;
     border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-  
-.idFindPart .findSection,
-.pwFindPart .findSection {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
   
-.idFindPart img,
-.pwFindPart img {
-    margin-bottom: 5px;
+.loginContainer .inputWrapper,
+.loginContainer .loginImages {
+    margin: 10px 0;
+}
+  
+.loginContainer .loginImages img {
+    margin-right: 10px;
+}
+
+.idBox, .pwBox {
+    width: 158px;
+    height: 39px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 242px;
+}
+  
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.idPwFind {
+    margin-top: -10px;
+    margin-left: 180px;
+}
+
+.loginImages {
+    display: flex;
+    align-items: center;
+}
+
+.signUpSmall {
+    margin-left: 10px;
 }

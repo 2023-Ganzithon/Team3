@@ -18,7 +18,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('', {
+      const response = await axios.post('http://127.0.0.1:8000/login', {
         username: username,
         password: password,
       });
@@ -107,7 +107,7 @@ const MainWrapper = styled.div`
 
   > div {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 600px;
     margin: 10px 0;
