@@ -7,7 +7,7 @@ function Main() {
 
     const gotocoursemaking = () => {
         navigate('/coursemaking')
-    }
+    };
     
     const gotofindfood = () => {
         navigate('/findfood')

@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 function Fooddetail() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const selectedProvince = queryParams.get('province');
   const selectedCity = queryParams.get('city');
+
+
 
     return(
     <MainContainer>

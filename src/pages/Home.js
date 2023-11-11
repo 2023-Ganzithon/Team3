@@ -10,9 +10,10 @@ function Home() {
   return (
     <MainContainer>
       <MainWrapper>
-        <div>
-          <button onClick={myfunc}>login</button>
+        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '830px'}}>
+          <img src={process.env.PUBLIC_URL + '/img/mainlogo.png'} onClick={myfunc}/>
         </div>
+        
       </MainWrapper>
     </MainContainer>
   );
@@ -38,10 +39,5 @@ const MainWrapper = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
 
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
-  }
+
 `;
