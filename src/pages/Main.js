@@ -4,13 +4,30 @@ import { useNavigate } from 'react-router-dom';
 function Main() {
 
     const navigate = useNavigate()
+
+    const gotocoursemaking = () => {
+        navigate('/coursemaking')
+    }
     
     const gotofindfood = () => {
         navigate('/findfood')
     };
     const gotopopular = () => {
         navigate('/popular')
-    }
+    };
+
+    const gotofood1 = () => {
+        navigate('/fooddetail?province=강원도&city=강릉')
+    };
+
+    const gotofood2 = () => {
+        navigate('/fooddetail?province=충청남도&city=전체')
+    };
+
+    const gotofood3 = () => {
+        navigate('/fooddetail?province=경기도&city=가평')
+    };
+    /*navigate(`/fooddetail?province=${selectedProvince}&city=${selectedCity}`);*/
     
     return (
         <MainContainer>
@@ -24,7 +41,7 @@ function Main() {
 
                 <MainDivTwo>
 
-                        <button>코스 짜보기</button>
+                        <button onClick={gotocoursemaking}>코스 짜보기</button>
                         <button onClick={gotofindfood}>맛집 둘러보기</button>
                         <button onClick={gotopopular}>인기코스<br />둘러보기</button>
   
@@ -33,9 +50,9 @@ function Main() {
                 <MainDivTre>
                     <p>큐레이터 추천맛집</p>
                     <div>
-                        <button>강릉편</button>
-                        <button>충청도편</button>
-                        <button>가평편</button>
+                        <button onClick={gotofood1}>강릉</button>
+                        <button onClick={gotofood2}>충청남도</button>
+                        <button onClick={gotofood3}>가평</button>
                     </div>
                 </MainDivTre>
 
