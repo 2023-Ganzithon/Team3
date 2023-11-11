@@ -13,12 +13,13 @@
 }
 
 .station {
-    width: 146px;
-    height: 71px;
+    width: 390px;
+    font-size: 50px;
+    color: #75C382;
     margin-left: 30px;
     position: fixed;
-    top: -80px;
-    right: -70px;
+    top: -130px;
+    left: -80px;
 }
 
 .departure {

@@ -13,6 +13,7 @@ function CourseMaking() {
     ['', '', '', '']
   ]);
   const [cityOptions, setCityOptions] = useState([]);
+  const [selectedCity, setSelectedCity] = useState('전체');
   const [mapImage, setMapImage] = useState(null);
   const mapRef = useRef(null);
   let navigate = useNavigate();
@@ -75,6 +76,7 @@ function CourseMaking() {
     ));
 
     setCityOptions(cityOptions);
+    setSelectedCity('전체');
   }
 
   const handleImageUpload = () => {
@@ -139,7 +141,7 @@ function CourseMaking() {
           </div>
           <div className="locNameContainer">
             <img src="images/courseMaking/locName.svg" />
-            <select className="optionBox" onChange={handleSelectChange}>
+            <select className="optionBox" onChange={(e) => handleSelectChange(e)}>
               <option value="locSelection">지역 선택</option>
               <option value="경기도">경기도</option>
               <option value="강원도">강원도</option>
@@ -151,13 +153,13 @@ function CourseMaking() {
               <option value="제주도">제주도</option>
             </select>
             {cityOptions && (
-              <select className="optionBox">
+              <select className="optionBox" value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
                 {cityOptions}
               </select>
             )}
           </div>
           <img className="imgAdd" src="images/courseMaking/imgAdd.svg" onClick={handleImageUpload} />
-          <img className="courseSave" onClick={() => {navigate('/coursemakingfin');}} src="images/courseMaking/courseSave.svg"/> 
+          <img className="courseSave" onClick={() => { navigate('/coursemakingfin', { state: { selectedCity } }); }} src="images/courseMaking/courseSave.svg"/> 
         </div>
       </MainWrapper>
     </MainContainer>

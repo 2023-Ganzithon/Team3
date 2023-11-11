@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import "../styles/SignUpFin.css";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function CourseMakingFin() {
+  const { state } = useLocation();
+  const selectedCity = state?.selectedCity || '전체';
   let navigate = useNavigate();
 
   return (
@@ -14,7 +16,7 @@ function CourseMakingFin() {
           <TicketContainer>
             <img className="ticketImage" src="images/signUpFin/여행티켓.svg" />
             <TicketText>
-              <img className="station" src="images/signUpFin/구포역.svg" />
+              <p className="station">{selectedCity}</p>
               <img className="departure" src="images/signUpFin/출발시각.svg" />
               <img className="seat" src="images/signUpFin/좌석번호.svg" />
               <img className="seatNum" src="images/signUpFin/AB 12345678.svg" />
