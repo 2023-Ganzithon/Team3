@@ -12,6 +12,8 @@ const Theme = {
   fontColor: '#2D2B2B',
   fontTitle: "'Alata', sans-serif;",
   fontContent: "'Noto Sans KR', sans-serif;",
+  fontFamily: 'Maple'
+
 };
 
 export default Theme;
