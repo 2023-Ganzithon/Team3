@@ -29,16 +29,22 @@ function Mycourse() {
 export default Mycourse;
 
 const MainContainer = styled.div`
-    background-color: #797979;
+  width: 100%;
+  background-color: #797979;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const MainWrapper = styled.div`
   width: 390px;
   height: 844px;
   background-color: white;
-  margin: 0px;
-
+  position: flex;
+  flex-direction: column; 
+  align-items: center;
 `;
+
 
 const LogoDiv = styled.div`
  padding: 20px 0px 0px 20px;

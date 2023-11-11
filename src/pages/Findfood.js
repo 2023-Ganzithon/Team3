@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import React, { useState } from 'react';
 
+
 const FindFood = () => {
   const [selectedProvince, setSelectedProvince] = useState('경기도'); // 기본값은 서울특별시로 설정
   const [selectedCity, setSelectedCity] = useState('전체'); // 기본값은 전체로 설정
@@ -24,7 +25,8 @@ const FindFood = () => {
   };
 
       return (
-    <div>
+    <MainContainer>
+        <MainWrapper>
                 <LogoDiv>
                     <h3>삼시세끼</h3>
                 </LogoDiv>
@@ -41,7 +43,8 @@ const FindFood = () => {
         ))}
       </div>
       <button>음식 찾기</button>
-    </div>
+      </MainWrapper>
+    </MainContainer>
   );
 };
 
@@ -52,3 +55,21 @@ const LogoDiv = styled.div`
  padding: 20px 0px 0px 20px;
  color: #75C382;
 `;
+
+const MainContainer = styled.div`
+  width: 100%;
+  background-color: #797979;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const MainWrapper = styled.div`
+  width: 390px;
+  height: 844px;
+  background-color: white;
+  position: flex;
+  flex-direction: column; 
+  align-items: center;
+`;
+

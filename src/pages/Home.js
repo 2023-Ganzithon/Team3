@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
-function Main() {
+function Home() {
   const navigate = useNavigate();
   const myfunc = () => {
     navigate('/login');
@@ -18,7 +18,7 @@ function Main() {
   );
 }
 
-export default Main;
+export default Home;
 
 const MainContainer = styled.div`
   width: 100%;
