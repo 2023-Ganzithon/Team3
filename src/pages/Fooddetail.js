@@ -15,9 +15,15 @@ function Fooddetail() {
                     <h3>삼시세끼</h3>
                 </LogoDiv>
 
-                <div>
+                <div style={{marginLeft: '20px', fontWeight: 'bold'}}>
                 <p># {selectedProvince} {selectedCity} 에서 삼시세끼</p>
                 </div>
+
+                <div>
+
+                </div>
+
+
         </MainWrapper>
     </MainContainer>
 

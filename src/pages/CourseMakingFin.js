@@ -23,7 +23,7 @@ function CourseMakingFin() {
               <img className="lastText" src="images/signUpFin/행복한 여행.svg" />
             </TicketText>
           </TicketContainer>
-          <img className="mainImage" onClick={() => {navigate('/main');}} src="images/signUpFin/main.svg" />
+          <img className="mainImage" onClick={() => {navigate('/main');  window.location.reload();}} src="images/signUpFin/main.svg" />
         </ImgContainer>
       </MainWrapper>
     </MainContainer>

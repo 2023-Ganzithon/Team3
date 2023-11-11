@@ -159,7 +159,8 @@ function CourseMaking() {
             )}
           </div>
           <img className="imgAdd" src="images/courseMaking/imgAdd.svg" onClick={handleImageUpload} />
-          <img className="courseSave" onClick={() => { navigate('/coursemakingfin', { state: { selectedCity } }); }} src="images/courseMaking/courseSave.svg"/> 
+          <img className="courseSave" onClick={() => { navigate('/coursemakingfin', { state: { selectedCity } }); window.location.reload(); }} src="images/courseMaking/courseSave.svg"/> 
+
         </div>
       </MainWrapper>
     </MainContainer>
@@ -170,7 +171,6 @@ export default CourseMaking;
 
 const MainContainer = styled.div`
   width: 100%;
-  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;

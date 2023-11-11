@@ -1,6 +1,13 @@
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 function Mycourse() {
+
+    const navigate = useNavigate()
+    const gotocoursemaking = () => {
+        navigate('/coursemaking')
+    };
+
     return (
         <MainContainer>
             <MainWrapper>
@@ -17,7 +24,7 @@ function Mycourse() {
                 </MycourseDiv>
 
                 <NewcourseBtn>
-                    <button>새 코스 추가하기</button>
+                    <button onClick={gotocoursemaking}>새 코스 추가하기</button>
                 </NewcourseBtn>
 
             </MainWrapper>

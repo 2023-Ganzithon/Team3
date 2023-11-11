@@ -26,6 +26,11 @@ function Mypage() {
         navigate('/mycourse');
     };
 
+    const gotologout = () => {
+        navigate('/');
+        window.location.reload();
+    };
+
     useEffect(() => {
         // 실제 백엔드 API 엔드포인트에 맞게 수정
         fetch('https://github.com/da-jeong/Ganzithon_Server')
@@ -57,7 +62,7 @@ function Mypage() {
 
                 <MyDivTre onClick={goToUser}>내 정보 수정</MyDivTre>
 
-                <MyDivFou>로그아웃</MyDivFou>
+                <MyDivFou onClick={gotologout}>로그아웃</MyDivFou>
 
             </MainWrapper>
         </MainContainer>
