@@ -1,0 +1,71 @@
+.totalBoxSignUp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.logoHighSignUp {
+    margin-top: 121px;
+    margin-bottom: 100px;
+    margin-left: -140px;
+}
+
+.signUpContainer {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.signUpContainer .inputWrapper,
+.signUpContainer .signUpImages {
+    margin: 10px 0;
+}
+  
+.signUpContainer .signUpImages img {
+    margin-right: 10px;
+}
+
+.idBox, .pwBox {
+    width: 158px;
+    height: 39px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 242px;
+}
+  
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.idPwFind {
+    margin-top: -10px;
+    margin-left: 180px;
+}
+
+.signUpImages {
+    display: flex;
+    align-items: center;
+}
+
+.signUpSmall {
+    margin-left: 10px;
+}
+
+.pwMismatch {
+    margin-top: 5px;
+}

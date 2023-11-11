@@ -5,10 +5,17 @@ import Mypage from "./pages/Mypage";
 import User from "./pages/User";
 import Popular from "./pages/Popular";
 import Populardetail from "./pages/Populardetail";
+import Home from "./pages/Home";
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import IdPwChoice from './pages/IdPwChoice';
+import SignUpFin from './pages/SignUpFin';
+import CourseMaking from './pages/CourseMaking';
+import CourseMakingFin from './pages/CourseMakingFin';
 
 const routes = [
     {
-      path:'/',
+      path:'/main',
       component:Main
     },
     {
@@ -34,6 +41,34 @@ const routes = [
     {
       path:'/populardetail',
       component:Populardetail
+    },
+    {
+      path:'/',
+      component:Home
+    },
+    {
+      path:'/login',
+      component:Login
+    },
+    {
+      path:'/singup',
+      component:SignUp
+    },
+    {
+      path:'/idpwchoice',
+      component:IdPwChoice
+    },
+    {
+      path:'/signupfin',
+      component:SignUpFin
+    },
+    {
+      path:'/coursemaking',
+      component:CourseMaking
+    },
+    {
+      path:'/coursemakingfin',
+      component:CourseMakingFin
     }
 
 

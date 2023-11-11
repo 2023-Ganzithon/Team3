@@ -6,7 +6,7 @@ const NavBar = () => {
         
         <nav style={{paddingBottom: "10px"}}>
             <div style={{display:"flex" , justifyContent: 'space-around', position: 'fixed', bottom: '0', width: "390px"}}>
-                <Link to="/" style={{textDecoration: 'none', color: 'black', fontWeight: 'bold'}}>
+                <Link to="/main" style={{textDecoration: 'none', color: 'black', fontWeight: 'bold'}}>
                 <p>홈</p>
                 </Link>
     

@@ -1,0 +1,48 @@
+.LogoAndOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.idPwChoiceLogo {
+    width: 150px;
+    height: 72px;
+    margin-top: -500px;
+    margin-left: -10px;
+}
+
+.totalFindPart {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-left: -150px;
+}
+  
+.pwFindPart {
+    margin-left: 25px;
+}
+
+.idFindPart,
+.pwFindPart {
+    width: 158px;
+    height: 189px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+  
+.idFindPart .findSection,
+.pwFindPart .findSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.idFindPart img,
+.pwFindPart img {
+    margin-bottom: 5px;
+}
