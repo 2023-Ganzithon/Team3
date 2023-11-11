@@ -12,6 +12,7 @@ import IdPwChoice from './pages/IdPwChoice';
 import SignUpFin from './pages/SignUpFin';
 import CourseMaking from './pages/CourseMaking';
 import CourseMakingFin from './pages/CourseMakingFin';
+import Fooddetail from "./pages/Fooddetail";
 
 const routes = [
     {
@@ -21,6 +22,10 @@ const routes = [
     {
       path:'/findfood',
       component:Findfood
+    },
+    {
+      path:'/fooddetail',
+      component:Fooddetail
     },
     {
       path:'/mycourse',
